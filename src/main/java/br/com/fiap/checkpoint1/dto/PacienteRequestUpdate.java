@@ -1,12 +1,13 @@
 package br.com.fiap.checkpoint1.dto;
 
+import java.time.LocalDateTime;
+
 public class PacienteRequestUpdate {
    private String nome;
    private String endereco;
    private String bairro;
    private String email;
    private String telefone_completo;
-
     public String getNome() {
         return nome;
     }

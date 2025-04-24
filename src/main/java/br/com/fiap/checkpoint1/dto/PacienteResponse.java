@@ -2,6 +2,9 @@ package br.com.fiap.checkpoint1.dto;
 
 import br.com.fiap.checkpoint1.model.Pacientes;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class PacienteResponse {
     private Long id;
     private String nome;
@@ -9,6 +12,9 @@ public class PacienteResponse {
     private String bairro;
     private String email;
     private String telefone_completo;
+    private LocalDate data_nascimento;
+    private LocalDateTime created_at;
+    private LocalDateTime updated_at;
 
     //metodo para auxiliar no envio de informações paro a web
     public PacienteResponse toDto(Pacientes pacientes){
@@ -18,6 +24,9 @@ public class PacienteResponse {
         this.setBairro(pacientes.getBairro());
         this.setEmail(pacientes.getEmail());
         this.setTelefone_completo(pacientes.getTelefone_completo());
+        this.setData_nascimento(pacientes.getData_nascimento());
+        this.setCreated_at(pacientes.getCreated_at());
+        this.setUpdated_at(pacientes.getUpdated_at());
         return this;
     }
     public Long getId() {
@@ -66,5 +75,29 @@ public class PacienteResponse {
 
     public void setTelefone_completo(String telefone_completo) {
         this.telefone_completo = telefone_completo;
+    }
+
+    public LocalDate getData_nascimento() {
+        return data_nascimento;
+    }
+
+    public void setData_nascimento(LocalDate data_nascimento) {
+        this.data_nascimento = data_nascimento;
+    }
+
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
+    public LocalDateTime getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(LocalDateTime updated_at) {
+        this.updated_at = updated_at;
     }
 }
