@@ -1,17 +1,12 @@
-package br.com.fiap.checkpoint1.model;
+package br.com.fiap.checkpoint1.dto;
 
-import jakarta.persistence.*;
+import br.com.fiap.checkpoint1.model.Pacientes;
+import br.com.fiap.checkpoint1.model.Profissionais;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Entity
-public class Profissionais {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class ProfissionalResponse {
     private Long id;
     private String nome;
     private String especialidade;
@@ -19,6 +14,15 @@ public class Profissionais {
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
 
+    public ProfissionalResponse toDto(Profissionais profissionais){
+        this.setId(profissionais.getId());
+        this.setNome(profissionais.getNome());
+        this.setEspecialidade(profissionais.getEspecialidade());
+        this.setValor_hora(profissionais.getValor_hora());
+        this.setCreated_at(profissionais.getCreated_at());
+        this.setUpdated_at(profissionais.getUpdated_at());
+        return this;
+    }
     public Long getId() {
         return id;
     }
@@ -66,5 +70,4 @@ public class Profissionais {
     public void setUpdated_at(LocalDateTime updated_at) {
         this.updated_at = updated_at;
     }
-
 }

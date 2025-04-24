@@ -22,7 +22,6 @@ public class Pacientes {
     private LocalDate data_nascimento;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
-    private List<Consultas> consultas;
 
 
     public Long getId() {
@@ -96,12 +95,4 @@ public class Pacientes {
     public void setUpdated_at(LocalDateTime updated_at) {
         this.updated_at = updated_at;
     }
-    public List<Consultas> getConsultas() {
-        return consultas;
-    }
-
-    public void setConsultas(List<Consultas> consultas) {
-        this.consultas = consultas;
-    }
-
 }
