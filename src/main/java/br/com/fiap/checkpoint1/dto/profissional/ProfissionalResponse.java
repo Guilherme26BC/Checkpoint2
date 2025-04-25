@@ -1,6 +1,5 @@
-package br.com.fiap.checkpoint1.dto;
+package br.com.fiap.checkpoint1.dto.profissional;
 
-import br.com.fiap.checkpoint1.model.Pacientes;
 import br.com.fiap.checkpoint1.model.Profissionais;
 
 import java.math.BigDecimal;

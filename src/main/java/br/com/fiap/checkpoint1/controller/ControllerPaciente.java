@@ -1,8 +1,8 @@
 package br.com.fiap.checkpoint1.controller;
 
-import br.com.fiap.checkpoint1.dto.PacienteRequestCreate;
-import br.com.fiap.checkpoint1.dto.PacienteRequestUpdate;
-import br.com.fiap.checkpoint1.dto.PacienteResponse;
+import br.com.fiap.checkpoint1.dto.paciente.PacienteRequestCreate;
+import br.com.fiap.checkpoint1.dto.paciente.PacienteRequestUpdate;
+import br.com.fiap.checkpoint1.dto.paciente.PacienteResponse;
 import br.com.fiap.checkpoint1.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

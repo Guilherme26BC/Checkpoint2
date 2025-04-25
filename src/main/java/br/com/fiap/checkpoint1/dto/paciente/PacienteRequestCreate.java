@@ -1,10 +1,10 @@
-package br.com.fiap.checkpoint1.dto;
+package br.com.fiap.checkpoint1.dto.paciente;
 
-import br.com.fiap.checkpoint1.model.Consultas;
+import br.com.fiap.checkpoint1.model.Pacientes;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class PacienteRequestCreate {
     private String nome;
@@ -12,8 +12,21 @@ public class PacienteRequestCreate {
     private String bairro;
     private String email;
     private String telefone_completo;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate data_nascimento;
 
+    public Pacientes toModel(){
+        Pacientes pacientes = new Pacientes();
+        pacientes.setNome(this.getNome());
+        pacientes.setEndereco(this.getEndereco());
+        pacientes.setBairro(this.getBairro());
+        pacientes.setEmail(this.getBairro());
+        pacientes.setTelefone_completo(this.getTelefone_completo());
+        pacientes.setData_nascimento(this.getData_nascimento());
+        pacientes.setCreated_at(LocalDateTime.now());
+        pacientes.setUpdated_at(LocalDateTime.now());
+        return pacientes;
+    }
     public String getNome() {
         return nome;
     }

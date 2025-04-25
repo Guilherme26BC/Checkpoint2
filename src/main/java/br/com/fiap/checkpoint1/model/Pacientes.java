@@ -1,5 +1,6 @@
 package br.com.fiap.checkpoint1.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,8 +20,11 @@ public class Pacientes {
     private String bairro;
     private String email;
     private String telefone_completo;
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate data_nascimento;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime created_at;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime updated_at;
 
 

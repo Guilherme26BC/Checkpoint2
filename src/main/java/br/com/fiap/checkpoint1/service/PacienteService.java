@@ -1,7 +1,7 @@
 package br.com.fiap.checkpoint1.service;
 
-import br.com.fiap.checkpoint1.dto.PacienteRequestCreate;
-import br.com.fiap.checkpoint1.dto.PacienteRequestUpdate;
+import br.com.fiap.checkpoint1.dto.paciente.PacienteRequestCreate;
+import br.com.fiap.checkpoint1.dto.paciente.PacienteRequestUpdate;
 import br.com.fiap.checkpoint1.model.Pacientes;
 import org.springframework.stereotype.Service;
 
