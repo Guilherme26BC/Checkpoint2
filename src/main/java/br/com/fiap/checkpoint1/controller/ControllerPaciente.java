@@ -19,22 +19,22 @@ public class ControllerPaciente {
     private PacienteService pacienteService;
 
     @PostMapping
-    public ResponseEntity<PacienteResponse> createPaciente(@RequestBody PacienteRequestCreate dto){
+    public ResponseEntity<PacienteResponse> criarPaciente(@RequestBody PacienteRequestCreate dto){
         return ResponseEntity.status(201)
                 .body(new PacienteResponse()
-                        .toDto(pacienteService.createPaciente(dto)));
+                        .toDto(pacienteService.criarPaciente(dto)));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PacienteResponse> updatePaciente(@PathVariable Long id, @RequestBody PacienteRequestUpdate dto){
-        return pacienteService.updatePaciente(id, dto)
+    public ResponseEntity<PacienteResponse> atualizarPaciente(@PathVariable Long id, @RequestBody PacienteRequestUpdate dto){
+        return pacienteService.atualizarPaciente(id, dto)
                 .map(p->new PacienteResponse().toDto(p))
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePaciente(@PathVariable Long id){
-    if(pacienteService.deletePaciente(id)){
+    public ResponseEntity<Void> deletarPaciente(@PathVariable Long id){
+    if(pacienteService.deletarPaciente(id)){
         return ResponseEntity.status(204).build();
     }else{
         return ResponseEntity.notFound().build();
@@ -42,15 +42,15 @@ public class ControllerPaciente {
     }
     //path variable para separar os mapping de get
     @GetMapping("/{id}")
-    public ResponseEntity<PacienteResponse> getPacienteById(@PathVariable Long id){
-        return pacienteService.getById(id)
+    public ResponseEntity<PacienteResponse> buscarPacienteById(@PathVariable Long id){
+        return pacienteService.buscarPorId(id)
                 .map(p->new PacienteResponse().toDto(p))
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
     @GetMapping
-    public ResponseEntity<List<PacienteResponse>> getAll(){
-        List<PacienteResponse> responses= pacienteService.getAllPacientes()
+    public ResponseEntity<List<PacienteResponse>> buscarTodos(){
+        List<PacienteResponse> responses= pacienteService.buscarTodosPacientes()
                 .stream()
                 .map(p->new PacienteResponse().toDto(p))
                 .collect(Collectors.toList());
