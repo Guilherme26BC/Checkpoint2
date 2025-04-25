@@ -1,5 +1,6 @@
 package br.com.fiap.checkpoint1.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -16,7 +17,9 @@ public class Profissionais {
     private String nome;
     private String especialidade;
     private BigDecimal valor_hora;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime created_at;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime updated_at;
 
     public Long getId() {

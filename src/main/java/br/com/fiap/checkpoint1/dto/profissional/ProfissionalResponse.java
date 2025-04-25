@@ -1,6 +1,7 @@
 package br.com.fiap.checkpoint1.dto.profissional;
 
 import br.com.fiap.checkpoint1.model.Profissionais;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -10,7 +11,9 @@ public class ProfissionalResponse {
     private String nome;
     private String especialidade;
     private BigDecimal valor_hora;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime created_at;
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime updated_at;
 
     public ProfissionalResponse toDto(Profissionais profissionais){
