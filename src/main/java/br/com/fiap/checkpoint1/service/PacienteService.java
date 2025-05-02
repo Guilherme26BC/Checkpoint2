@@ -14,11 +14,6 @@ import java.util.Optional;
 public class PacienteService {
     private PacienteRepository pacienteRepository;
 
-    //lista auxiliar
-    private List<Pacientes> pacientes = new ArrayList<>();
-    //sequence para id
-    private Long sequence =1L;
-
     public Pacientes criarPaciente(PacienteRequestCreate dto){
         return pacienteRepository.save(dto.toModel());
     }
