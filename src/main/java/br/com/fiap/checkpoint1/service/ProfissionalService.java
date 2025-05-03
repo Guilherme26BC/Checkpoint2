@@ -4,6 +4,7 @@ import br.com.fiap.checkpoint1.dto.profissional.ProfissionalRequestCreate;
 import br.com.fiap.checkpoint1.dto.profissional.ProfissionalRequestUpdate;
 import br.com.fiap.checkpoint1.model.Profissionais;
 import br.com.fiap.checkpoint1.repository.ProfissionalRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.Optional;
 
 @Service
 public class ProfissionalService {
+
+    @Autowired
     private ProfissionalRepository profissionalRepository;
 
     public Profissionais criarProfissional(ProfissionalRequestCreate dto){

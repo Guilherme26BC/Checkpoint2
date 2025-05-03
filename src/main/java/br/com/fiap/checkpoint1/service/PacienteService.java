@@ -4,6 +4,7 @@ import br.com.fiap.checkpoint1.dto.paciente.PacienteRequestCreate;
 import br.com.fiap.checkpoint1.dto.paciente.PacienteRequestUpdate;
 import br.com.fiap.checkpoint1.model.Pacientes;
 import br.com.fiap.checkpoint1.repository.PacienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @Service
 public class PacienteService {
+    @Autowired
     private PacienteRepository pacienteRepository;
 
     public Pacientes criarPaciente(PacienteRequestCreate dto){
