@@ -21,7 +21,7 @@ public class ControllerProfissional {
 
     @PostMapping
     public ResponseEntity<ProfissionalResponse> criarProfissional(@RequestBody ProfissionalRequestCreate dto){
-        return ResponseEntity.status(200).body(new ProfissionalResponse()
+        return ResponseEntity.status(201).body(new ProfissionalResponse()
                 .toDto(profissionalService.criarProfissional(dto)));
     }
 
@@ -45,5 +45,12 @@ public class ControllerProfissional {
                 .stream().map(p-> new ProfissionalResponse().toDto(p))
                 .collect(Collectors.toList()));
     }
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarProfissional(@PathVariable Long id){
+       if(profissionalService.deletarPaciente(id)){
+           return ResponseEntity.ok().build();
+       }else{
+           return ResponseEntity.notFound().build();
+       }
+    }
 }

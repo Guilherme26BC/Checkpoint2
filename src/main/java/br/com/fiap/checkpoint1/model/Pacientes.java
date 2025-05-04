@@ -15,12 +15,12 @@ public class Pacientes {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String nome;
     private String endereco;
     private String bairro;
     private String email;
     private String telefone_completo;
-    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate data_nascimento;
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime created_at;
